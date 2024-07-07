@@ -27,6 +27,9 @@ export default function App() {
     <div className="App">
       <h1>Memory Game</h1>
       <button onClick={() => shuffleDeck()}>New Game</button>
+      {cards.map((card) => (
+        <p>{card.card}</p>
+      ))}
     </div>
   );
 }
