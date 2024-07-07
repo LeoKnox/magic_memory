@@ -1,4 +1,5 @@
 import "./styles.css";
+import { useState } from "react";
 
 const deck = [
   { card: "sword" },
@@ -10,13 +11,17 @@ const deck = [
 ];
 
 export default function App() {
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  ]
   const shuffleDeck = () => {
+    console.log("a");
     const shuffledDeck = [...deck, ...deck]
       .sort(() => Math.random() - 0.5)
-      .map((card, index) => ({ ...card, id: Math.random() }));
-    return shuffledDeck;
+      .map((card) => ({ ...card, id: Math.random() }));
+    setCards(shuffledCards);
+    setTurns(0);
   };
-  console.log(JSON.stringify(shuffleDeck));
   return (
     <div className="App">
       <h1>Memory Game</h1>
