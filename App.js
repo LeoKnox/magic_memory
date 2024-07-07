@@ -13,19 +13,19 @@ const deck = [
 export default function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
-  ]
+
   const shuffleDeck = () => {
     console.log("a");
     const shuffledDeck = [...deck, ...deck]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
-    setCards(shuffledCards);
+    setCards(shuffledDeck);
     setTurns(0);
   };
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <button>New Game</button>
+      <button onclick={() => shuffleDeck()}>New Game</button>
     </div>
   );
 }
